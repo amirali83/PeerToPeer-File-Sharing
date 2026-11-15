@@ -578,8 +578,8 @@ def start_client():
 
     ### Check for files to act as Seed 
     torrent_files = [
-        r"Torrent_Handler\my_real_torrent_1.txt",
-        r"Torrent_Handler\my_real_torrent_2.txt"
+        os.path.join("Torrent_Handler", "my_real_torrent_1.txt"),
+        os.path.join("Torrent_Handler", "my_real_torrent_2.txt")
     ]
     print("\n[*] Scanning for existing files to seed...")
     for i, file_path in enumerate(torrent_files):
@@ -639,9 +639,9 @@ def start_client():
                     user_input = parts[1].strip('"').strip("'") 
                     
                     if user_input == "1":
-                        torrent_path = r"Torrent_Handler\my_real_torrent_1.txt"
+                        torrent_path = os.path.join("Torrent_Handler", "my_real_torrent_1.txt")
                     elif user_input == "2":
-                        torrent_path = r"Torrent_Handler\my_real_torrent_2.txt"
+                        torrent_path = os.path.join("Torrent_Handler", "my_real_torrent_2.txt")
                     else:
                         torrent_path = user_input
                     
